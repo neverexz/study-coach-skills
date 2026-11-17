@@ -126,7 +126,20 @@
 
 ### Task 8: Final whole-repository review
 
-- [ ] Fresh reviewer reads spec, packages, validation and actual behavioral observations; check the five Review Focus conditions.
-- [ ] Resolve material findings with targeted reproduction and verification; keep minor deferrals visible.
-- [ ] Re-run full unittest, repository checker and bundled skill-creator quick validator for all six entrypoints.
-- [ ] Confirm clean tracked status, commits and publication-ready diff; leave branch local for user's later GitHub publication.
+- [x] Fresh reviewer reads spec, packages, validation and actual behavioral observations; check the five Review Focus conditions.
+- [x] Resolve material findings with targeted reproduction and verification; keep minor deferrals visible.
+- [x] Re-run full unittest, repository checker and bundled skill-creator quick validator for all six entrypoints.
+- [x] Confirm clean tracked status, commits and publication-ready diff; leave branch local for user's later GitHub publication.
+
+## Execution choices and review limits
+
+- Reused the supplied checkout on `codex/deeptutor-learning-skills`, with main untouched. A second worktree would duplicate a fresh repository; the remaining cost is that other local processes can still access this checkout.
+- Selected inline implementation with independent behavior agents and one whole-repository reviewer under the user's instruction to proceed. There was no fresh implementation reviewer per task; five-sample applications and final review provided the checks.
+- Used `skills/` as the canonical publication source instead of duplicating it under outputs. Consumers copy the bundle into their own skill directory; the README documents this step.
+- Kept the supplied LICENSE and pinned primary-source attribution; did not copy DeepTutor's runtime. Upstream content was inspected statically, not exercised as a running application.
+- Co-located assessment rules with saved-state rules in `learning-progress` instead of making progress depend on the tutor. The cost is that standalone tutoring keeps mastery provisional until the shared contract is available.
+- Implemented the independent integrity-checker portion of Task 7 during Task 1 so every package had a repeatable check. Documentation and CI still shipped after the six skills. This changes task ordering, not product scope.
+- Retained heuristic assessment/review thresholds. Their scientific effectiveness remains unvalidated; schedules can be suboptimal for an individual learner.
+- Kept cooperative file locking rather than adding a server runtime. A process bypassing the lock can still race; the occupied-lock application test verified refusal to overwrite a cooperating writer.
+- The final reviewer did not revalidate live upstream links or the entire DeepTutor analysis. Pinned citations and explicit static-analysis scope remain; external availability and later upstream behavior can change.
+- GitHub publication and global installation remain later user actions, as requested. Local commits and a temporary installation smoke test are the delivery boundary; hosted CI cannot be claimed as run before publication.

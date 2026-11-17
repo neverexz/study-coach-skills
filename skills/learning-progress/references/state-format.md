@@ -51,6 +51,9 @@ Objective: `id`, `title`, `type` (`memory`, `procedure`, `concept`, `design`),
 `coverage` (`unseen`, `partial`, `explained`), `mastery` (`unassessed`, `developing`,
 `assessed`), `learner_claim` (text or `null`), `deferred` (boolean), `attempt_ids`,
 `review` (`step`, `due_on`, `last_reviewed_at`). These dimensions are independent.
+The review step is an interval index: 0 before a successful schedule or after a
+reset, 1 after the first independent success, then 2–5 for successive due reviews.
+Use the exact transition table in [evidence-rules.md](evidence-rules.md), including repairs.
 
 Attempt: stable `id`, `objective_id`, `question_id`, `question`, `learner_answer`,
 `reference_answer` or rubric, `source_refs`, `assistance`, `independent`, `result`,

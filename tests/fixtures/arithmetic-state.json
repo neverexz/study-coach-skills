@@ -24,7 +24,7 @@
       "id": "attempt-001", "objective_id": "obj-001", "question_id": "q1",
       "question": "2 + 2", "learner_answer": "4", "reference_answer": "5",
       "source_refs": [], "assistance": "none", "independent": true,
-      "result": "incorrect", "status": "active", "recorded_at": null,
+      "result": "incorrect", "status": "active", "recorded_at": "2026-11-17T10:00:00+03:00",
       "correction_of": null
     }
   ],

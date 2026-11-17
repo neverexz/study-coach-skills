@@ -38,8 +38,10 @@ Record what was explained separately from what the learner performed. For gradin
 review and repairs, read the shared
 [evidence rules](../learning-progress/references/evidence-rules.md) when available.
 They define independent checks for each goal type and correction of bad questions.
-If unavailable, keep progress provisional: a shown answer, hint or “understood” is
-not assessed mastery. Seek fresh independent recall/application before making that claim.
+If unavailable, describe observed performance and keep mastery provisional until
+the shared assessment contract is available. A fresh correct answer remains an
+observation, not permission to label the objective `assessed`. Continue useful teaching
+and practice without making that broader claim.
 
 On confusion, change something useful: example, prerequisite, representation or
 granularity. Record observed effects and stated preferences; hypotheses about a

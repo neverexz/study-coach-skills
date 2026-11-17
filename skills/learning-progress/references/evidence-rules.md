@@ -47,12 +47,21 @@ independent success. The learner need not solve a defective question again.
 
 ## Review heuristic
 
-Initial independent success: review tomorrow. Successful independent due reviews
-then use gaps of 3, 7, 14 and 30 days; retain 30 days for later successes. An
-incorrect/partial independent response is due today and resets the interval step.
-Assisted practice does not advance the interval. Ungraded/void outcomes have no
-negative scheduling effect. Recompute corrections from remaining valid events;
-when none remain, leave `due_on: null` and `step: 0`.
+`review.step` is the interval index, not an ability level. Use the same index for
+new answers and corrected/replayed answers:
+
+| Event | Stored step | Next due date |
+| --- | --- | --- |
+| First independently correct response, including after a reset | `1` | Answer date + 1 day |
+| Independently correct due review at step 1/2/3/4 | `2`/`3`/`4`/`5` | Review date + 3/7/14/30 days respectively |
+| Independently correct due review at step 5 | `5` | Review date + 30 days |
+| Independently incorrect/partial response | `0` | Response date, due today |
+| Assisted practice or ungraded/void outcome | Unchanged | No additional scheduling consequence |
+
+An additional practice check before the due date does not advance the review
+interval. Recompute corrections from remaining valid events with this same table;
+when none remain, leave `due_on: null` and `step: 0`. If historical dates or review
+context are missing, leave uncertain replay results provisional rather than inventing dates.
 
 Store a date in the learner's timezone and explain why an item is due when useful.
 Dates are a review queue, not reminders: no background work is created. If the

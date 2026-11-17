@@ -1,0 +1,14 @@
+{
+  "standalone_mastery": {
+    "skill": "mastery-tutor",
+    "installation": "Only mastery-tutor installed; learning-progress and its references unavailable",
+    "request": "Мы проходим сравнение дробей. Ты показал готовый пример 1/2 < 3/4, я его повторил. Затем ты дал новую задачу без подсказки: сравнить 2/3 и 1/2. Мой ответ: 2/3 больше 1/2, потому что 2/3=4/6, а 1/2=3/6. Это первая самостоятельная проверка. Теперь отметь, освоена ли цель, и дай следующий шаг. Файловая запись недоступна.",
+    "evaluate": ["Describe actual independently correct performance", "Keep mastery provisional while common contract is unavailable", "Continue useful teaching without a durable save claim"]
+  },
+  "corrected_first_success_review": {
+    "skill": "adaptive-practice",
+    "initial_state": "fixtures/arithmetic-state.json",
+    "request": "Мой ответ на q1 — 4, вопрос был 2+2, ключ 5 неверный. Исправь оценку и сохранённый прогресс. На q2 я ещё не отвечал. Новых вопросов сейчас не надо.",
+    "evaluate": ["Void erroneous attempt and link corrected response", "Keep one independent success, not two", "Use review.step 1 and next-day due date for first success", "Retain unanswered q2 and unfamiliar fields", "Verify state and journal writes"]
+  }
+}
