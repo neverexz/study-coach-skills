@@ -1,6 +1,6 @@
 # Study Coach Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Add one entrypoint that routes learner requests across the six existing skills while preserving pending work and shared evidence.
 
@@ -33,22 +33,22 @@
 **Consumes:** sibling entrypoints, state format v1 and evidence-rules, actual learner messages.
 **Produces:** selected workflow instructions, preserved learner context and one coordinated outcome.
 
-- [ ] Create realistic route and transition inputs with separate evaluator criteria; stage blind requests under ignored work.
-- [ ] Run five fresh controls with existing skills and no new master; record actual responses and gaps without forcing a failure claim.
-- [ ] Write a compact entrypoint with six route pointers, context restoration, compound-turn sequencing, assistance and one-save ownership; no extra reference unless it earns its size.
-- [ ] Run five fresh guided samples on the same transition inputs; read every response.
-- [ ] Perform an actual temporary-course transition: grade one submitted item, explain a source passage, preserve two pending siblings, save exactly once.
-- [ ] Test missing module and ambiguous resume in isolated fixtures; fix only observed gaps and re-test them.
-- [ ] Run bundled quick validator and `python3 tools/validate.py`; commit verified skill and scenarios.
+- [x] Create realistic route and transition inputs with separate evaluator criteria; stage blind requests under ignored work.
+- [x] Run five fresh controls with existing skills and no new master; record actual responses and gaps without forcing a failure claim.
+- [x] Write a compact entrypoint with six route pointers, context restoration, compound-turn sequencing, assistance and one-save ownership; no extra reference unless it earns its size.
+- [x] Run five fresh guided samples on the same transition inputs; read every response.
+- [x] Perform an actual temporary-course transition: grade one submitted item, explain a source passage, preserve two pending siblings, save exactly once.
+- [x] Test missing module and ambiguous resume in isolated fixtures; fix only observed gaps and re-test them.
+- [x] Run bundled quick validator and `python3 tools/validate.py`; commit verified skill and scenarios.
 
 ### Task 2: Package integration and final review
 
 **Files:** modify README, `docs/evaluation.md`, `docs/provenance.md`; complete this plan.
 **Consumes:** verified Task 1 package; no new production interfaces.
 
-- [ ] Make study-coach the README starting point, retain six direct examples, update current package count to seven and full-bundle installation instructions.
-- [ ] Record measured observations and limits; identify master routing as this project's adaptation rather than copied DeepTutor behavior.
-- [ ] Run `python3 -m unittest discover -s tests -v`, both validators for all seven packages and an installation-copy/local-link smoke check.
+- [x] Make study-coach the README starting point, retain six direct examples, update current package count to seven and full-bundle installation instructions.
+- [x] Record measured observations and limits; identify master routing as this project's adaptation rather than copied DeepTutor behavior.
+- [x] Run `python3 -m unittest discover -s tests -v`, both validators for all seven packages and an installation-copy/local-link smoke check.
 - [ ] Commit integration docs; request one fresh whole-change review against the spec and the five Review Focus cases.
 - [ ] Resolve material findings with targeted reproduction and fresh verification; report any untested limits honestly.
 - [ ] Verify clean tracked status and leave local commits on the existing feature branch for later publication.
