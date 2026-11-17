@@ -41,7 +41,9 @@ def prose_lines(text):
 def validate_repository(root: Path) -> list[str]:
     skills = (root / "skills").resolve()
     errors = []
-    packages = sorted(p for p in skills.iterdir() if p.is_dir()) if skills.is_dir() else []
+    packages = (
+        sorted(p for p in skills.iterdir() if p.is_dir()) if skills.is_dir() else []
+    )
     if not packages:
         return [f"{skills}: no skill packages found"]
 
@@ -58,10 +60,19 @@ def validate_repository(root: Path) -> list[str]:
                     errors.append(f"{entrypoint}: frontmatter must be a mapping")
                 else:
                     name = metadata.get("name")
-                    if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name) or len(name) > 64 or name != package.name:
+                    if (
+                        not isinstance(name, str)
+                        or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name)
+                        or len(name) > 64
+                        or name != package.name
+                    ):
                         errors.append(f"{entrypoint}: name must match its hyphen-case folder")
                     description = metadata.get("description")
-                    if not isinstance(description, str) or not description.strip() or len(description) > 1024:
+                    if (
+                        not isinstance(description, str)
+                        or not description.strip()
+                        or len(description) > 1024
+                    ):
                         errors.append(f"{entrypoint}: description must be nonempty text, at most 1024 characters")
         except (OSError, UnicodeError, yaml.YAMLError, TypeError) as exc:
             errors.append(f"{entrypoint}: {exc}")
@@ -74,7 +85,12 @@ def validate_repository(root: Path) -> list[str]:
                         if url.scheme in {"https", "http", "mailto"} or not url.path:
                             continue
                         destination = (document.parent / unquote(url.path)).resolve()
-                        if url.scheme or url.netloc or not destination.is_relative_to(skills) or not destination.exists():
+                        if (
+                            url.scheme
+                            or url.netloc
+                            or not destination.is_relative_to(skills)
+                            or not destination.exists()
+                        ):
                             errors.append(f"{document}: missing or unbundled reference {target}")
             except (OSError, UnicodeError, ValueError) as exc:
                 errors.append(f"{document}: {exc}")

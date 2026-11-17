@@ -1,6 +1,5 @@
 """Repository checks catch broken installable packages, not teaching quality."""
 
-import json
 from pathlib import Path
 import shutil
 import subprocess
