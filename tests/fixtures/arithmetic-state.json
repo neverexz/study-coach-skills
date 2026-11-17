@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "course_id": "arithmetic",
+  "revision": 3,
+  "goal": "Самостоятельно выполнять арифметические действия",
+  "profile": {"language": "ru", "timezone": "Europe/Moscow"},
+  "sources": [],
+  "objectives": [
+    {
+      "id": "obj-001", "title": "Складывать целые числа", "type": "procedure",
+      "coverage": "explained", "mastery": "developing", "learner_claim": null,
+      "deferred": false, "attempt_ids": ["attempt-001"],
+      "review": {"step": 0, "due_on": "2026-11-17", "last_reviewed_at": null}
+    },
+    {
+      "id": "obj-002", "title": "Делить целые числа", "type": "procedure",
+      "coverage": "explained", "mastery": "unassessed", "learner_claim": null,
+      "deferred": false, "attempt_ids": [],
+      "review": {"step": 0, "due_on": null, "last_reviewed_at": null}
+    }
+  ],
+  "attempts": [
+    {
+      "id": "attempt-001", "objective_id": "obj-001", "question_id": "q1",
+      "question": "2 + 2", "learner_answer": "4", "reference_answer": "5",
+      "source_refs": [], "assistance": "none", "independent": true,
+      "result": "incorrect", "status": "active", "recorded_at": null,
+      "correction_of": null
+    }
+  ],
+  "mistakes": [
+    {"objective_id": "obj-001", "attempt_id": "attempt-001", "note": "Ответ 4 оценён неверным по ошибочному ключу 5"}
+  ],
+  "pending": {
+    "question_id": "batch-001",
+    "items": [
+      {"question_id": "q1", "objective_id": "obj-001", "question": "2 + 2", "answer_status": "answered", "learner_answer": "4", "attempt_id": "attempt-001"},
+      {"question_id": "q2", "objective_id": "obj-002", "question": "8 / 2", "answer_status": "unanswered", "source_refs": [], "assistance": "none", "key_status": "needs_rebuild"}
+    ]
+  },
+  "reading_position": null,
+  "next_step": "Повторить q1 из-за записанной ошибки",
+  "custom_note": "Keep this learner-owned field"
+}
