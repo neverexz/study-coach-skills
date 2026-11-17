@@ -1,0 +1,58 @@
+{
+  "transitions": {
+    "answer_then_read": {
+      "request": "Курс arithmetic. В группе q1: 2+2, q2: 8/2, q3: 7−3. На q1 отвечаю 4, на q2 и q3 ещё не отвечал. А в предоставленном notes.md, раздел «Проверка», написано: «Результат деления можно проверить умножением». Объясни это на примере, без нового квиза. Сохрани для продолжения нужные сведения; файловая запись сейчас недоступна.",
+      "evaluate": [
+        "Grade only q1 once",
+        "Read supplied passage and cite its label/section",
+        "Preserve q2 and q3 IDs and unanswered status",
+        "Do not expose their keys or force a quiz",
+        "One coherent unsaved handoff"
+      ]
+    },
+    "hint_then_answer": {
+      "request": "Продолжаем курс fractions и открытую question-002: сократить 9/12. Я попросил одну подсказку. Ты подсказал: раздели числитель и знаменатель на 3. Теперь отвечаю 3/4. Отметь результат и вернись к курсу; не задавай новую задачу сейчас. Запись файлов недоступна.",
+      "evaluate": [
+        "One actual learner response, one attempt",
+        "Assistance retained across route switch",
+        "Correct answer not independent mastery",
+        "Original pending question resolved",
+        "No new question and no false save claim"
+      ]
+    },
+    "resume_repair": {
+      "request": "Продолжим курс arithmetic по этой сводке: q1 «2+2», мой ответ «4», твой старый ключ «5», оценка incorrect; из-за неё записаны ошибка и штраф повторения. q2 «8/2» ещё без ответа. Я оспариваю ключ q1. Исправь результат и подготовь продолжение с q2, без новых вопросов. Файловая запись недоступна.",
+      "evaluate": [
+        "Restore supplied identity without claiming disk read",
+        "Repair old key and dependent records",
+        "Do not count regrade as second success",
+        "Retain q2 with its ID",
+        "No new question or durable save claim"
+      ]
+    }
+  },
+  "routes": {
+    "course": "Хочу за месяц научиться решать задачи на проценты. Сначала объясняй на примерах.",
+    "source": "Объясни предоставленный notes.md, раздел «Проверка»: Результат деления можно проверить умножением. Сейчас только объяснение.",
+    "solve": "Решаю 3(x−2)=12. Дай одну подсказку, без готового решения.",
+    "practice": "Дай три задания на сложение целых чисел. Ответы пока не показывай.",
+    "research": "Сравни два предоставленных первичных отчёта: a.md Results — CPU X, 10с, dataset A; b.md Results — GPU Y, 2с, dataset B. Можно ли утверждать, что GPU всегда быстрее? Сети нет.",
+    "progress": "Сохрани текущую сводку: курс fractions, 6/8 повторено с подсказкой, question-002 про 9/12 без ответа. Запись файлов недоступна."
+  },
+  "edge_cases": {
+    "ambiguous_resume": "Продолжим. В проекте есть сохранённые курсы arithmetic и fractions; ни один в этом чате не выбирался.",
+    "missing_module": "Хочу сравнить подходы по первичным источникам; сети нет. Предоставлены a.md Results: CPU X 10с на A; b.md Results: GPU Y 2с на B."
+  },
+  "filesystem_transition": {
+    "initial_state": "fixtures/study-coach-state.json",
+    "source_file": "fixtures/study-coach-notes.md (copy to notes.md in temporary project root)",
+    "request": "Курс arithmetic. На q1 отвечаю 4, q2 и q3 без ответа. Объясни notes.md, раздел Проверка, на примере без нового квиза и сохрани результат.",
+    "evaluate": [
+      "revision 0 -> 1 for the compound turn",
+      "Exactly one active attempt for q1",
+      "q2/q3 remain unanswered with original IDs",
+      "Unknown fields and reading position survive",
+      "State and journal writes actually verified"
+    ]
+  }
+}
