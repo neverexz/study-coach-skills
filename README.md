@@ -1,4 +1,9 @@
-# Study Skills
+# Study Coach — AI Agent Skills for Learning
+
+AI agent skills for learning with Codex: tutoring, source-based study, guided
+problem solving, adaptive practice, research and persistent progress.
+
+One study coach, six focused workflows, and shared learning progress.
 
 Семь скиллов для обучения в Codex по мотивам
 [DeepTutor](https://github.com/HKUDS/DeepTutor): мастер `study-coach` и шесть
