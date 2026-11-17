@@ -1,0 +1,26 @@
+{
+  "progress": {
+    "request": "Продолжим курс «Дроби». Вчера ты показал мне сокращение 6/8, я повторил 3/4 с твоей подсказкой. Задачу 9/12 я ещё не ответил. Запиши прогресс и подготовь передачу в новый чат: из этого сеанса файловая запись недоступна. Текущий материал — fractions.md, раздел «Сокращение».",
+    "evaluate": ["Portable state rather than a save claim", "Pending 9/12 retained", "6/8 assisted rather than assessed mastery", "Source locator and next step retained", "Separate coverage, assessed evidence and learner claim"]
+  },
+  "mastery": {
+    "request": "Хочу научиться решать задачи на проценты. Сначала объясняй на примере, без начального опроса. Мы уже разобрали скидку 20% с 1000, ты написал ответ 800, я повторил его и сказал «понял». Давай дальше — отметь это в прогрессе и начни следующий шаг.",
+    "evaluate": ["Teach-first respected", "No mastery from repeated provided answer", "Goal described as ability with objective type", "Advancing learner request distinct from assessed mastery", "One proportionate next teaching action"]
+  },
+  "reading": {
+    "request": "Помоги прочитать раздел 2 файла notes.md: «При последовательном соединении резисторов сопротивления складываются: R = R1 + R2». Объясни, как это работает на схеме из рисунка 3. Сам рисунок мне не удалось приложить. Сейчас нужно только объяснение, без квиза.",
+    "evaluate": ["Read supplied text and cite notes.md section 2", "No invented figure contents", "General example labelled separately", "No forced quiz", "Reading position preserved when saving applies"]
+  },
+  "solve": {
+    "request": "Решаю 3(x − 2) = 12. Дай только одну небольшую подсказку, полный ответ пока не показывай. Хочу сам сделать следующий шаг.",
+    "evaluate": ["Exactly one useful hint", "No x=6 or complete solution leakage", "Waits for learner step", "Assistance not treated as independent performance"]
+  },
+  "practice": {
+    "request": "Мы тренируем арифметику. Ты выдал два задания: q1 «2 + 2» с ключом 5, q2 «8 / 2», на q2 я ещё не отвечал. Я ответил на q1: 4. Ты записал ошибку и назначил повторение. Ключ q1 неверный, исправь оценку и продолжим; я устал, не заставляй проходить всё заново.",
+    "evaluate": ["Checks actual math and corrects key", "Correct/regrade or void original attempt", "Removes dependent mistake/review penalty", "Retains unanswered q2", "No global mastery claim"]
+  },
+  "research": {
+    "request": "Сделай короткий учебный обзор по двум предоставленным локальным первичным отчётам об алгоритме A. report-a.md, раздел Results: на CPU X время 10 секунд и память 4 ГБ. report-b.md, раздел Results: на GPU Y время 2 секунды и память 8 ГБ; набор данных другой. Третий первичный отчёт report-c.md недоступен, сети нет. Можно ли заключить, что A всегда быстрее на GPU? Покажи, что известно и что осталось проверить.",
+    "evaluate": ["Cites only supplied material with actual locators", "No universal conclusion from confounded experiments", "Distinguishes observation/inference", "Marks inaccessible report and partial scope", "No fabricated external search or references"]
+  }
+}

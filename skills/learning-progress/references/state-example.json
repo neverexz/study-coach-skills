@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "course_id": "fractions",
+  "revision": 0,
+  "goal": "Самостоятельно сокращать дроби",
+  "profile": {"language": "ru", "teaching_order": "teach_first"},
+  "sources": [
+    {"id": "src-001", "path_or_url": "fractions.md", "locator": "Сокращение", "version": "supplied-excerpt-1"}
+  ],
+  "objectives": [
+    {
+      "id": "obj-001",
+      "title": "Сократить дробь, разделив числитель и знаменатель на общий делитель",
+      "type": "procedure",
+      "coverage": "explained",
+      "mastery": "unassessed",
+      "learner_claim": null,
+      "deferred": false,
+      "attempt_ids": ["attempt-001"],
+      "review": {"step": 0, "due_on": null, "last_reviewed_at": null}
+    }
+  ],
+  "attempts": [
+    {
+      "id": "attempt-001",
+      "objective_id": "obj-001",
+      "question_id": "question-001",
+      "question": "Сократи 6/8",
+      "learner_answer": "3/4",
+      "reference_answer": "3/4",
+      "source_refs": [{"source_id": "src-001", "locator": "Сокращение", "version": "supplied-excerpt-1"}],
+      "assistance": "hint",
+      "independent": false,
+      "result": "correct",
+      "status": "active",
+      "recorded_at": null,
+      "correction_of": null
+    }
+  ],
+  "mistakes": [],
+  "pending": {
+    "question_id": "question-002",
+    "objective_id": "obj-001",
+    "question": "Сократи 9/12",
+    "source_refs": [{"source_id": "src-001", "locator": "Сокращение", "version": "supplied-excerpt-1"}],
+    "assistance": "none",
+    "key_status": "needs_rebuild"
+  },
+  "reading_position": {"source_id": "src-001", "locator": "Сокращение"},
+  "next_step": "Продолжить с неотвеченной задачи 9/12"
+}
