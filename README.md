@@ -1,61 +1,63 @@
 # Study Coach — AI Agent Skills for Learning
 
+**English** | [Русский](README.ru.md)
+
 AI agent skills for learning with Codex: tutoring, source-based study, guided
 problem solving, adaptive practice, research and persistent progress.
 
 One study coach, six focused workflows, and shared learning progress.
 
-Семь скиллов для обучения в Codex по мотивам
-[DeepTutor](https://github.com/HKUDS/DeepTutor): мастер `study-coach` и шесть
-самостоятельных сценариев — освоение темы, работа с материалами, разбор задач,
-практика, исследование и продолжение занятий между чатами.
+Seven learning skills for Codex, inspired by
+[DeepTutor](https://github.com/HKUDS/DeepTutor): the `study-coach` coordinator and
+six standalone workflows for mastering a topic, studying materials, solving
+problems, practicing, researching, and continuing study across chats.
 
-Набор состоит из инструкций и небольших references. Устанавливать DeepTutor,
-настраивать его сервер или переносить API-ключи не требуется. `mastery-tutor` —
-новый скилл; существующий `socratic-tutor` он не изменяет.
+The bundle contains instructions and small reference files. You do not need to
+install DeepTutor, configure its server, or transfer API keys. `mastery-tutor` is
+a new skill; it does not modify an existing `socratic-tutor` installation.
 
-## Начать с одного входа
+## Start with one entry point
 
-После установки набора выберите учебный проект и напишите:
-
-```text
-$study-coach Хочу освоить SQL по этим материалам. Сначала объясняй на примерах.
-```
-
-Дальше можно писать обычными словами: «объясни этот фрагмент», «дай одну
-подсказку», «потренируемся», «покажи прогресс». Мастер читает инструкции нужного
-сценария и использует общий курс. При переключении сохраняются открытые задания,
-отметки о помощи и позиция в материале.
-
-В новом чате откройте тот же учебный проект:
+After installing the bundle, select your study project and write:
 
 ```text
-$study-coach Продолжим курс sql с сохранённого места.
+$study-coach I want to master SQL using these materials. Start with examples.
 ```
 
-Если подходящих курсов несколько, мастер уточнит нужный. Сохранение происходит
-через тот же `learning-progress`; отдельного хранилища у мастера нет.
+Then use ordinary language: “explain this passage,” “give me one hint,” “let’s
+practice,” or “show my progress.” The coordinator reads the instructions for the
+relevant workflow and uses the shared course state. Switching workflows preserves
+unfinished tasks, records of assistance, and your position in the material.
 
-## Сценарии
+To continue in a new chat, open the same study project:
 
-| Скилл | Пример запроса |
+```text
+$study-coach Resume the sql course from where we left off.
+```
+
+If several courses match, the coordinator asks which one to use. It saves through
+the same `learning-progress` skill and has no separate storage.
+
+## Workflows
+
+| Skill | Example prompt |
 | --- | --- |
-| [study-coach](skills/study-coach/SKILL.md) | `$study-coach Помоги учиться по этим материалам; выбирай подходящий сценарий.` |
-| [mastery-tutor](skills/mastery-tutor/SKILL.md) | `$mastery-tutor Научи меня решать задачи на проценты. Сначала объясняй на примерах.` |
-| [source-study](skills/source-study/SKILL.md) | `$source-study Разберём раздел 2 этого PDF. Объясни связь формул с рисунком.` |
-| [guided-solve](skills/guided-solve/SKILL.md) | `$guided-solve Помоги с этой задачей: пока дай только одну подсказку.` |
-| [adaptive-practice](skills/adaptive-practice/SKILL.md) | `$adaptive-practice Подготовь меня к экзамену по этим материалам и моим ошибкам.` |
-| [learning-research](skills/learning-research/SKILL.md) | `$learning-research Разберись в этой области: сравни подходы по первичным источникам.` |
-| [learning-progress](skills/learning-progress/SKILL.md) | `$learning-progress Сохрани результат занятия и продолжим с него в новом чате.` |
+| [study-coach](skills/study-coach/SKILL.md) | `$study-coach Help me study these materials and choose the appropriate workflow.` |
+| [mastery-tutor](skills/mastery-tutor/SKILL.md) | `$mastery-tutor Teach me to solve percentage problems. Start with examples.` |
+| [source-study](skills/source-study/SKILL.md) | `$source-study Walk me through section 2 of this PDF. Explain how the formulas relate to the diagram.` |
+| [guided-solve](skills/guided-solve/SKILL.md) | `$guided-solve Help me with this problem. Give me just one hint for now.` |
+| [adaptive-practice](skills/adaptive-practice/SKILL.md) | `$adaptive-practice Prepare me for an exam using these materials and my mistakes.` |
+| [learning-research](skills/learning-research/SKILL.md) | `$learning-research Investigate this field and compare approaches using primary sources.` |
+| [learning-progress](skills/learning-progress/SKILL.md) | `$learning-progress Save this session so we can resume it in a new chat.` |
 
-Задания и темп подстраиваются под цель. Объяснение, решение с подсказкой,
-самостоятельная проверка и заявление «я знаю» учитываются раздельно. По запросу
-можно получить готовый разбор или отложить цель; это не подменяет проверку освоения.
+Tasks and pace adapt to your goal. Explanations, assisted solutions, independent
+assessment, and claims such as “I know this” are recorded separately. You can ask
+for a worked solution or defer a goal; neither counts as evidence of mastery.
 
-## Установка для проекта
+## Install for a project
 
-Клонируйте или скачайте репозиторий. Из его корня скопируйте **все семь папок**
-в `.agents/skills` проекта, где будете учиться. Замените путь своим:
+Clone or download the repository. From its root, copy **all seven folders** into
+`.agents/skills` in the project where you will study. Replace the path below:
 
 ```bash
 STUDY_PROJECT=/absolute/path/to/your-project
@@ -63,32 +65,35 @@ mkdir -p "$STUDY_PROJECT/.agents/skills"
 cp -R -n skills/. "$STUDY_PROJECT/.agents/skills/"
 ```
 
-`-n` сохраняет уже существующие файлы. Если там есть пакеты с такими же именами,
-сначала сравните их: эта команда не обновляет существующую установку целиком.
-Для личного использования тот же набор можно разместить в `~/.agents/skills`.
-Взаимные ссылки рассчитывают на соседние папки с исходными именами.
+`-n` preserves existing files. If packages with the same names are already
+installed, compare them first: this command does not fully update an existing
+installation. For personal use across projects, you can place the same bundle in
+`~/.agents/skills`. Cross-references rely on neighboring folders with their
+original names.
 
-Codex поддерживает проектный и пользовательский каталоги `.agents/skills`;
-явный выбор в CLI доступен через `$имя-скилла` или `/skills`. Если изменения
-не появились, перезапустите Codex. См. [официальную документацию](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills).
+Codex supports project and user `.agents/skills` directories. In the CLI, use
+`$skill-name` or `/skills` to select a skill explicitly. If changes do not appear,
+restart Codex. See the [official documentation](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills).
 
-Шесть предметных сценариев по-прежнему доступны напрямую. Можно установить
-только один из них для разовой работы. Для совместимого
-сохранения прогресса ему понадобится соседний `learning-progress`. При отсутствии
-общего контракта скилл продолжит текущую задачу и предложит сводку для переноса.
-В автономном `mastery-tutor` итоговый статус освоения остаётся предварительным,
-пока общие правила оценки недоступны.
-Для работы `study-coach` установите полный набор: мастер подгружает соседние
-пакеты по задаче. При отсутствии модуля он сообщит, какой сценарий недоступен,
-и ограничит работу доступными материалами и инструкциями.
+All six focused workflows remain directly accessible. You can install just one
+for a one-off task. Compatible progress saving requires a neighboring
+`learning-progress` skill. If the shared contract is unavailable, the skill
+continues the current task and offers a summary you can carry to another chat.
+In standalone `mastery-tutor`, the final mastery status remains provisional until
+the shared assessment rules are available.
 
-## Материалы и прогресс
+Install the full bundle for `study-coach`: it loads neighboring packages as
+needed. If a module is missing, it identifies the unavailable workflow and works
+within the available materials and instructions.
 
-Прикладывайте доступные файлы, фрагменты и ссылки. Поиск, просмотр PDF/рисунков,
-исполнение кода и сеть зависят от инструментов вашей среды. Недоступный рисунок
-или ненадёжный ключ дают «не оценено», а не ошибку ученика.
+## Materials and progress
 
-Состояние курса хранится в **вашем учебном проекте**:
+Attach accessible files, excerpts, and links. Search, PDF and diagram viewing,
+code execution, and network access depend on the tools in your environment. An
+inaccessible diagram or unreliable answer key results in “not assessed,” rather
+than a learner error.
+
+Course state is stored in **your study project**:
 
 ```text
 learning/<topic-slug>/
@@ -96,17 +101,19 @@ learning/<topic-slug>/
   journal.md
 ```
 
-Для нового чата выберите тот же проект и попросите продолжить нужный курс.
-Если запись файлов недоступна, скилл выдаст переносимый блок и сообщит, что
-сохранения не было. Локальные ключи ответов доступны владельцу файлов;
-скрытие до ответа — правило показа, а не защита от чтения.
+In a new chat, select the same project and ask to resume the relevant course.
+If file writing is unavailable, the skill provides a portable state block and
+reports that nothing was saved. Local answer keys are accessible to the file
+owner; withholding them until after an answer is a presentation rule, not access
+control.
 
-Даты повторения — очередь для следующего занятия. Напоминания и фоновые занятия
-не создаются. Порог освоения и интервалы — открытые рабочие эвристики.
+Review dates form a queue for the next session. They do not create reminders or
+background study sessions. Mastery thresholds and review intervals are documented
+working heuristics.
 
-## Проверки и разработка
+## Validation and development
 
-Для самих скиллов Python не нужен. Для проверки репозитория:
+The skills themselves do not require Python. To validate the repository:
 
 ```bash
 python3 -m pip install -r requirements-dev.txt
@@ -114,14 +121,16 @@ python3 -m unittest discover -s tests -v
 python3 tools/validate.py
 ```
 
-GitHub Actions запускает те же проверки метаданных, ссылок и JSON. Это проверка
-целостности пакетов; результаты независимых проб учебного поведения и ограничения
-описаны в [docs/evaluation.md](docs/evaluation.md).
+The GitHub Actions workflow runs the same metadata, reference, and JSON checks.
+These verify package integrity. Independent trials of tutoring behavior and
+their limitations are documented in [docs/evaluation.md](docs/evaluation.md)
+(in Russian).
 
-## Источники
+## Sources
 
-Правила написаны заново по результатам разбора DeepTutor v1.7.3, без его runtime
-и внутренних инструментов. [Карта первичных источников и собственных решений](docs/provenance.md).
-Генерация собственного учебника в набор не входит.
+The instructions were written from scratch after analyzing DeepTutor v1.7.3,
+without its runtime or internal tools. See the
+[map of primary sources and original design decisions](docs/provenance.md)
+(in Russian). Textbook generation is outside the scope of this bundle.
 
-Лицензия: [Apache 2.0](LICENSE).
+License: [Apache 2.0](LICENSE).
