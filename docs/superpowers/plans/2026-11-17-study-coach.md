@@ -49,10 +49,14 @@
 - [x] Make study-coach the README starting point, retain six direct examples, update current package count to seven and full-bundle installation instructions.
 - [x] Record measured observations and limits; identify master routing as this project's adaptation rather than copied DeepTutor behavior.
 - [x] Run `python3 -m unittest discover -s tests -v`, both validators for all seven packages and an installation-copy/local-link smoke check.
-- [ ] Commit integration docs; request one fresh whole-change review against the spec and the five Review Focus cases.
-- [ ] Resolve material findings with targeted reproduction and fresh verification; report any untested limits honestly.
-- [ ] Verify clean tracked status and leave local commits on the existing feature branch for later publication.
+- [x] Commit integration docs; request one fresh whole-change review against the spec and the five Review Focus cases.
+- [x] Resolve material findings with targeted reproduction and fresh verification; report any untested limits honestly.
+- [x] Verify clean tracked status and leave local commits on the existing feature branch for later publication.
 
 ## Execution decisions
 
 Reuse `codex/deeptutor-learning-skills` in the supplied checkout. Execute inline with independent behavioral agents and a final reviewer, following the user's explicit approval to implement. No further execution-method approval is needed. Existing tests/checker stay unchanged unless the new package exposes a genuine integrity-check gap.
+
+## Final review decisions
+
+The independent reviewer found no Critical, Important or Minor issues and verified the saved transition artifacts. The original six packages were not independently re-audited as new work: their contracts are unchanged, although an interaction bug could still exist outside these cases. All-client behavior and concurrent load were not tested; only the available environment and cooperative file protocol are claimed. No new write-fault injection was run for the master: the reviewed save path uses the existing, previously tested progress contract, and missing-write fallback was exercised in guided cases. Hosted CI and global installation remain outside this local delivery.
